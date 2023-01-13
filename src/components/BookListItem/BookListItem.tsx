@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Book } from "../../domain/book";
+import { Hideable } from "../../Hideable";
 
 export interface BookListItemProps {
   book: Book;
@@ -29,7 +30,9 @@ const BookListItem: React.FC<BookListItemProps> = ({ book }) => {
           {book.title}
         </h2>
         <h3>{book.subtitle}</h3>
+
         <div>by {book.author}</div>
+        <Hideable>{book.abstract}</Hideable>
         <button onClick={likeHandler}>
           &#128079; {numLikes > 0 && `(${numLikes})`}
         </button>
