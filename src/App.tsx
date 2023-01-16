@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import AppHeader from "./components/AppHeader/AppHeader";
-import { BookList } from "./components/BookList/BookList";
-import { fetchBooks, Book } from "./domain/book";
+import { ThemeEditor } from "./components/ThemeEditor";
+
+import { MyContext } from "./domain/theme";
 
 function App() {
-  const [books, setBooks] = useState<Book[]>([]);
-
-  useEffect(() => {
-    fetchBooks()
-      .then((books) => setBooks(books))
-      .catch((err) => console.error(err));
-  }, []);
-
+  const [primaryColor, setPrimaryColor] = useState("tomato");
   return (
-    <div className="App">
-      <AppHeader title="BookMonkey" />
-      <BookList books={books} />
-    </div>
+    <MyContext.Provider value={{ primaryColor, setPrimaryColor }}>
+      <div className="App">
+        <ThemeEditor />
+        <AppHeader title="BookMonkey" />
+        <Outlet />
+      </div>
+    </MyContext.Provider>
   );
 }
 
