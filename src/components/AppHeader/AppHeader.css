@@ -2,3 +2,11 @@
   color: blue;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
+a {
+  text-decoration: none;
+}
+
+a.active {
+  text-decoration: underline;
+  color: blue;
+}

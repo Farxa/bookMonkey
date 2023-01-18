@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Book } from "../../domain/book";
 import { Hideable } from "../../Hideable";
 
@@ -16,6 +17,7 @@ const BookListItem: React.FC<BookListItemProps> = ({ book }) => {
   const likeHandler = () => {
     setNumLikes(numLikes + 1);
   };
+
   return (
     <>
       <div>
@@ -32,6 +34,9 @@ const BookListItem: React.FC<BookListItemProps> = ({ book }) => {
         <h3>{book.subtitle}</h3>
 
         <div>by {book.author}</div>
+        <NavLink to={`/books/${book.isbn}`} style={{ fontSize: "100px" }}>
+          ...
+        </NavLink>
         <Hideable>{book.abstract}</Hideable>
         <button onClick={likeHandler}>
           &#128079; {numLikes > 0 && `(${numLikes})`}

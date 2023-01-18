@@ -5,17 +5,22 @@ import AppHeader from "./components/AppHeader/AppHeader";
 import { ThemeEditor } from "./components/ThemeEditor";
 
 import { MyContext } from "./domain/theme";
+import { Provider } from "react-redux";
+
+import store from "./store";
 
 function App() {
   const [primaryColor, setPrimaryColor] = useState("tomato");
   return (
-    <MyContext.Provider value={{ primaryColor, setPrimaryColor }}>
-      <div className="App">
-        <ThemeEditor />
-        <AppHeader title="BookMonkey" />
-        <Outlet />
-      </div>
-    </MyContext.Provider>
+    <Provider store={store}>
+      <MyContext.Provider value={{ primaryColor, setPrimaryColor }}>
+        <div className="App">
+          <ThemeEditor />
+          <AppHeader title="BookMonkey" />
+          <Outlet />
+        </div>
+      </MyContext.Provider>
+    </Provider>
   );
 }
 

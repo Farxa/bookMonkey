@@ -9,8 +9,18 @@ export const fetchBooks = async (
 ): Promise<Book[] | undefined> => {
   try {
     const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    const books: Book[] = await response.json();
+    return books;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchBook = async (isbn: string): Promise<Book | undefined> => {
+  try {
+    const response = await fetch(`http://localhost:4730/books/${isbn}`);
+    const book: Book = await response.json();
+    return book;
   } catch (error) {
     console.error(error);
   }
