@@ -10,7 +10,7 @@ interface AppHeaderProps {
 const AppHeader: React.FC<AppHeaderProps> = ({ title }) => {
   const theme = useContext(MyContext);
   return (
-    <>
+    <div className="app-header">
       <h1 style={{ color: theme.primaryColor }}>{title}</h1>
       <img src={ModernMonkeyUnLogo} alt="app logo" />
       <div>
@@ -24,7 +24,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ title }) => {
           <NavLink to="/counter">Counter</NavLink>
         </h3>
       </div>
-    </>
+    </div>
   );
 };
 

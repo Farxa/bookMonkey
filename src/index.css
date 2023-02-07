@@ -1,14 +1,160 @@
 body {
-  margin: 0;
+  /* margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: scroll;
+  overflow-y: scroll; */
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 442px;
+  height: 889px;
+  min-height: 889px;
+  max-height: 889px;
+  overflow: hidden;
+  font: 400 var(--font-base) / 1.5rem "Merriweather", sans-serif;
+  color: var(--c-text-primary);
+  display: block;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0c/IPhone_13_vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: saturate(0) brightness(0.8);
+}
+
+element.style {
+}
+@media (max-height: 800px) body {
+  transform: scale(0.8);
+}
+@media (max-height: 900px) body {
+  transform: scale(0.9);
+}
+body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 442px;
+  height: 889px;
+  min-height: 889px;
+  max-height: 889px;
+  overflow: hidden;
+  transform: scale(1);
+}
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font: 400 var(--font-base) / 1.5rem "Merriweather", sans-serif;
+  color: var(--c-text-primary);
+}
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+user agent stylesheet body {
+  display: block;
+  margin: 8px;
+}
+:root {
+  --c-brand-primary: hsl(15deg 79% 64%);
+  --c-brand-primary_active: hsl(12deg 62% 56%);
+  --c-brand-secondary: hsl(11deg 58% 66%);
+  --c-white: #fff;
+  --c-text-primary: #000;
+  --c-text-secondary: hsl(28deg 7% 39%);
+  --c-text-tertiary: hsl(26deg 4% 67%);
+  --c-bg-browser: linear-gradient(
+    190deg,
+    hsl(25deg 55% 90%),
+    hsl(24deg 60% 88%)
+  );
+  --c-bg-window: hsl(30deg 25% 97%);
+  --c-bg-button: hsl(18deg 67% 94%);
+  --c-bg-button_active: hsl(17deg 64% 90%);
+  --c-bg-input: hsl(40deg 18% 90%);
+  --font-base: 16px;
+  --font-xs: 0.8rem;
+  --font-sm: 0.9rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+}
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0c/IPhone_13_vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: saturate(0) brightness(0.8);
+}
+body:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 164px;
+  height: 32px;
+  z-index: 9999;
+  background: #000;
+  border-radius: 0 0 23px 23px;
+}
+
+#root {
+  position: absolute;
+  top: 21px;
+  left: 26px;
+  width: 390px;
+  height: 848px;
+  overflow: hidden scroll;
+  background: var(--c-bg-window);
+  border-radius: 45px;
+  padding: 0 0.75rem 2rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font: 400 var(--font-base) / 1.5rem "Merriweather", sans-serif;
+  color: var(--c-text-primary);
 }
